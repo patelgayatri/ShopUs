@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "151582337173",
+    "project_id": "shopus-ab3fc",
+    "storage_bucket": "shopus-ab3fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151582337173:android:a97f64d224007cd937139c",
+        "android_client_info": {
+          "package_name": "com.techand.shopus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151582337173-rklrq1qtoj28hskc9agrfq16evro10qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIQBABpmnufnIdFESBJ9HPiz-rA-VIL6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151582337173-rklrq1qtoj28hskc9agrfq16evro10qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
