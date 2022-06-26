@@ -14,11 +14,9 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.ImageViewHolder>() {
     lateinit var onClickListener: OnClickListener
 
     inner class ImageViewHolder(val binding: RawCartBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+        RecyclerView.ViewHolder(binding.root)
 
-    }
-
-    private val DiffUtilCallBack = object : DiffUtil.ItemCallback<MyCart>() {
+    private val diffUtilCallBack = object : DiffUtil.ItemCallback<MyCart>() {
         override fun areItemsTheSame(oldItem: MyCart, newItem: MyCart): Boolean {
             return oldItem.path == newItem.path
         }
@@ -28,7 +26,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.ImageViewHolder>() {
         }
 
     }
-    private val differ = AsyncListDiffer(this, DiffUtilCallBack)
+    private val differ = AsyncListDiffer(this, diffUtilCallBack)
     var cartItems: List<MyCart>
         get() = differ.currentList
         set(value) {

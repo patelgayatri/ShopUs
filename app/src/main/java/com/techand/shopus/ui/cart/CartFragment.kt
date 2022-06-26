@@ -2,7 +2,6 @@ package com.techand.shopus.ui.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -47,13 +46,13 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
             setHasFixedSize(true)
             adapter = imageAdapter
         }
-        viewModel.cartLiveData.observe(viewLifecycleOwner, {
+        viewModel.cartLiveData.observe(viewLifecycleOwner) {
             imageAdapter.cartItems = it
-        })
-        viewModel.totalAmount.observe(viewLifecycleOwner, {
+        }
+        viewModel.totalAmount.observe(viewLifecycleOwner) {
             val totalText = it?.toString() ?: "0"
             binding.totalMoney.text = "$$totalText"
-        })
+        }
     }
 
     private fun setClick() {
