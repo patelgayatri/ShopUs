@@ -23,7 +23,7 @@ class ProductFragment : Fragment(R.layout.fragment_home) {
     private val binding get() = _binding!!
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var imageAdapter: ProductAdapter
-    private var menuId: MenuItem? = null
+    private var cartItem: String? = "0"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,16 +57,21 @@ class ProductFragment : Fragment(R.layout.fragment_home) {
                     }
                 }
                 is Resource.Error -> handleApiError(it)
+                else -> {}
             }
         }
         viewModel.cartTotal.observe(viewLifecycleOwner) {
-            menuId?.title = it?.toString()
+            cartItem = it?.toString()
         }
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.getItem(1).title =cartItem
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.cart_menu, menu)
         super.onCreateOptionsMenu(menu,inflater)
-        menuId = menu.getItem(1)
     }
 
     override fun onDestroy() {
