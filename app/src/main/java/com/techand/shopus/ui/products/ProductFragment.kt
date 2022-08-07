@@ -23,7 +23,7 @@ class ProductFragment : Fragment(R.layout.fragment_home) {
     private val binding get() = _binding!!
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var imageAdapter: ProductAdapter
-    var menuId: MenuItem? = null
+    private var menuId: MenuItem? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

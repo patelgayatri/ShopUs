@@ -50,40 +50,4 @@ open class ProductRepository @Inject constructor(
     override suspend fun getImages(): Resource<ProductResponse> = safeApiCall{
          apiService.getImages()
     }
-
-//    suspend fun getImages() = safeApiCall {
-//        apiService.getImages()
-//    }
-//
-//    suspend fun getMyCart() =
-//        withContext(Dispatchers.IO) {
-//            myCartDao.getMyCart()
-//        }
-//    suspend fun getCartTotal() = withContext(Dispatchers.IO){
-//        myCartDao.getCartTotal()
-//    }
-//    suspend fun getMoneyTotal() = withContext(Dispatchers.IO){
-//        myCartDao.getTotalMoney()
-//    }
-//
-//    suspend fun getQuantity(id: Int) =
-//        withContext(Dispatchers.IO) {
-//            myCartDao.getQuantity(id)
-//        }
-//
-//    suspend fun insertToCart(myCart: MyCart) = withContext(Dispatchers.IO) {
-//        myCartDao.insertToMyCart(myCart)
-//    }
-//
-//    suspend fun addProduct(id: Int) = withContext(Dispatchers.IO) {
-//        myCartDao.addProduct(id)
-//    }
-//
-//    suspend fun subProduct(id: Int) = withContext(Dispatchers.IO) {
-//        myCartDao.subProduct(id)
-//    }
-//
-//    suspend fun deleteProduct(id: Int) = withContext(Dispatchers.IO) {
-//        myCartDao.deleteProduct(id)
-//    }
 }
